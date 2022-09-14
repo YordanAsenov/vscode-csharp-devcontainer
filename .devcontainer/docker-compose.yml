@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+      - ../src:/src
+    user: developer
+
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - 27017:27017
+    volumes:
+      - ../data/mongodb:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=demo
+      - MONGO_INITDB_ROOT_PASSWORD=demo
+    restart: unless-stopped
