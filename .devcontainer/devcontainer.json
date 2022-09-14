@@ -8,7 +8,7 @@
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a volume mount in .devcontainer/docker-compose.yml
 	"workspaceFolder": "/src",
-	"forwardPorts": [27017],
+	"forwardPorts": [5000, 5001, 27017],
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 	},
